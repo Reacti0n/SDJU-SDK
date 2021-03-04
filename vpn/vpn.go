@@ -11,7 +11,7 @@ type VPN struct {
 }
 
 // NewVPN 实例化 VPN 连接
-func (v *VPN) NewVPN(cfg *config.Config)*VPN  {
+func NewVPN(cfg *config.Config)*VPN  {
 	ctx := &context.Context{Config: cfg}
 	return &VPN{ctx: ctx}
 }

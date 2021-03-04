@@ -1,8 +1,10 @@
-package SDJU_SDK
+package SDJU
 
 import (
 	"github.com/Reacti0n/SDJU-SDK/vpn"
 	vpnConfig "github.com/Reacti0n/SDJU-SDK/vpn/config"
+	educationConfig "github.com/Reacti0n/SDJU-SDK/education/config"
+	"github.com/Reacti0n/SDJU-SDK/education"
 	log "github.com/sirupsen/logrus"
 	"os"
 )
@@ -31,6 +33,12 @@ func NewSDJUSDK()*SDJUSDK  {
 
 // GetVPN 获取 VPN 实例
 func (ss *SDJUSDK)GetVPN(cfg *vpnConfig.Config) *vpn.VPN  {
-	return vpn.NewVpn(cfg)
+	return vpn.NewVPN(cfg)
+}
+
+
+// GetEducation 获取教务实例
+func (ss *SDJUSDK)GetEducation(cfg *educationConfig.Config) *education.Education  {
+	return education.NewEducation(cfg)
 }
 
